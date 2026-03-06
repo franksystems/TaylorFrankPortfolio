@@ -10,8 +10,11 @@ import { SiteHeader } from "@/components/SiteHeader";
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-neutral-950 text-neutral-100 selection:bg-neutral-200 selection:text-neutral-900">
-      <div className="background-layer" />
+    <div className="relative min-h-screen overflow-x-hidden bg-neutral-950 text-neutral-100">
+      <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden grid-bg">
+        <div className="absolute left-[-10rem] top-[-6rem] h-[24rem] w-[24rem] rounded-full bg-cyan-500/10 blur-3xl" />
+        <div className="absolute right-[-8rem] top-[10rem] h-[28rem] w-[28rem] rounded-full bg-violet-500/10 blur-3xl" />
+      </div>
       <SiteHeader />
       <main>
         <Hero />

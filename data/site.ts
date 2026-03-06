@@ -1,3 +1,4 @@
+import type { LucideIcon } from "lucide-react";
 import {
   Cloud,
   Cpu,
@@ -6,33 +7,20 @@ import {
   Layers,
   ShieldCheck,
   Workflow,
-  type LucideIcon,
 } from "lucide-react";
-
-export type Metric = { value: string; label: string };
-export type ExpertiseItem = { icon: LucideIcon; title: string; text: string };
-export type CaseStudy = {
-  title: string;
-  subtitle: string;
-  icon: LucideIcon;
-  points: string[];
-  tags: string[];
-};
-export type Decision = { title: string; why: string; tradeoff: string };
-export type TimelineItem = { company: string; role: string; period: string; text: string };
 
 export const profile = {
   name: "Taylor Frank",
   title: "Staff-Track Software Engineer",
-  location: "Ashburn, Virginia",
   email: "taylor.frank@justrightreader.com",
   linkedin: "https://linkedin.com/in/taylorfrank03",
+  location: "Ashburn, Virginia",
   heroTitle: "I build production platforms that turn ambiguity into durable systems.",
   heroDescription:
     "Staff-scope full stack engineer with deep execution across application architecture, event-driven workflows, distributed data design, and AWS infrastructure. I specialize in building systems that improve reliability, automation, and operational leverage.",
 };
 
-export const metrics: Metric[] = [
+export const metrics = [
   { value: "2,000", label: "users supported" },
   { value: "6,000", label: "tenant contexts" },
   { value: "50K/day", label: "requests handled" },
@@ -41,7 +29,13 @@ export const metrics: Metric[] = [
   { value: "70%", label: "faster deal-to-fulfillment" },
 ];
 
-export const expertise: ExpertiseItem[] = [
+export type IconCard = {
+  icon: LucideIcon;
+  title: string;
+  text: string;
+};
+
+export const expertise: IconCard[] = [
   {
     icon: Workflow,
     title: "Event-Driven Systems",
@@ -64,7 +58,15 @@ export const expertise: ExpertiseItem[] = [
   },
 ];
 
-export const caseStudies: CaseStudy[] = [
+export type Study = {
+  title: string;
+  subtitle: string;
+  icon: LucideIcon;
+  points: string[];
+  tags: string[];
+};
+
+export const caseStudies: Study[] = [
   {
     title: "Take Everywhere Platform",
     subtitle: "Multi-service product platform",
@@ -111,7 +113,7 @@ export const caseStudies: CaseStudy[] = [
   },
 ];
 
-export const decisions: Decision[] = [
+export const decisions = [
   {
     title: "Hybrid DynamoDB + Postgres",
     why: "Separated high-throughput lifecycle state from relational assessment and workflow logic.",
@@ -132,7 +134,7 @@ export const decisions: Decision[] = [
   },
 ];
 
-export const timeline: TimelineItem[] = [
+export const timeline = [
   {
     company: "Just Right Reader",
     role: "Senior Full Stack Engineer (Staff Scope)",
